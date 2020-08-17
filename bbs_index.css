@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+/*
+   Author:   Sebastian Hollabaugh
+   Date:     8/1/18
+   
+   Filename: bbs_styles1.css
+   
+   This file contains the layout styles used in the Billy Bill Splitter Home page.
+
+*/
+
+/* ===========
+   Base Styles
+   ===========
+*/
+
+
+/* Section and article Styles */
+
+section {
+   background-color: rgb(207, 222, 172);
+   clear: both;
+}
+
+section::after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+article img {
+   display: block;
+   width: 100%;
+   float: left;
+   border: 10px solid rgb(207, 222, 172);
+}
+
+article::after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+section p {
+   line-height: 1.4em;
+   padding: 10px;
+   font-size: 1.2em;
+}
+
+/* Aside Styles */
+
+aside h1 {
+	text-align: center;
+	font-size: 3em;
+}
+
+aside blockquote {
+	margin: 20px 5px;
+	quotes: "\201C" "\201D";
+}
+
+aside blockquote::before {
+	content: open-quote;
+	font-family: 'Times New roman', Times, serif;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+aside blockquote::after {
+	content: close-quote;
+	font-family: 'Times New roman', Times, serif;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+aside {
+   display: block;
+   background-color: rgb(181, 204, 136);
+}
+
+aside.info {
+	 background-color: white;
+	 width: 70%;
+	 margin-top: 10px;
+}
+
+aside.reviews {
+	width: 70%;
+}
+
+/*	=============================
+	Mobile Stlyes: 0px to 480px
+	=============================
+*/
+@media only screen and (max-width: 480px) {
+	aside.reviews {
+		display: none;
+	}
+	
+	article img {
+		width: 100%;
+	}
+	aside.info {
+		width: 100%;
+	}
+	
+}
+
+/*	=============================
+	Tablet Stlyes: 481px and greater
+	=============================
+*/
+@media only screen and (min-width: 481px) {
+	
+	article {
+		width: 50%;
+		float: left;
+	}
+	
+	aside.reviews {
+		width: 100%;
+		clear: left;
+	}
+	
+	aside.info {
+		width: 50%;
+		float: left;
+		vertical-align: middle;
+	}
+	
+/*	=============================
+	Desktop Stles: 769px and greater
+	=============================
+*/
+@media only screen and (min-width: 769px) {
+		
+	article {
+		float: left;
+		width: 30%;
+	}
+	aside {
+		float: left;
+		width: 70%;
+	}
+	
+	aside.reviews {
+		width: 70%;
+		clear: none;
+	}
+	
+	aside.info {
+		width: 70%;
+	}
+	
+}

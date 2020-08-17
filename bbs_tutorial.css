@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 6
+   Tutorial Case
+
+   Tables Style Sheet
+   Author: Sebastianhollabaugh
+   Date:   8/2/18
+
+   Filename:      bbs_tutorial.css
+
+*/
+
+/* Table Styles */
+table.tutorial {
+	background: white;
+	border-collapse: collapse;
+	margin: 10px auto;
+	font-size: 0.75em;
+}
+
+/* Table Cell Styles */
+table.tutorial th, table.tutorial td {
+	border: 1px solid gray;
+	padding: 5px;
+	vertical-align: top;
+	width: 50%;
+}
+
+
+/* Row Group Styles */
+table.tutorial thead {
+	background: rgb(0, 0, 200);
+	text-align: center;
+	color: white;
+}
+
+/* Column widths are based on these cells */
+.row-inst {
+  width: 50%;
+}
+.row-pic {
+  width: 50%;
+}
+
+
+
+section {
+   background-color: rgb(207, 222, 172);
+   clear: both;
+}
+
+section::after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+article::after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+section p {
+   line-height: 1.4em;
+   padding: 10px;
+   font-size: 1.2em;
+}
+
+/* Aside Styles */
+
+aside h1 {
+	text-align: center;
+	font-size: 3em;
+}
+
+aside blockquote {
+	margin: 20px 5px;
+	quotes: "\201C" "\201D";
+}
+
+aside blockquote::before {
+	content: open-quote;
+	font-family: 'Times New roman', Times, serif;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+aside blockquote::after {
+	content: close-quote;
+	font-family: 'Times New roman', Times, serif;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+aside {
+   display: block;
+   background-color: rgb(181, 204, 136);
+}
+
+aside.info {
+	 background-color: white;
+	 width: 70%;
+	 margin-top: 10px;
+}
+
+aside.reviews {
+	width: 70%;
+}
+
+/*	=============================
+	Mobile Stlyes: 0px to 480px
+	=============================
+*/
+@media only screen and (max-width: 480px) {
+	aside.reviews {
+		display: none;
+	}
+	
+	article img {
+		width: 100%;
+	}
+	aside.info {
+		width: 100%;
+	}
+	iframe {
+    width: auto;
+    height: auto;
+	}
+	table.tutorial {
+	width: 100%;
+	border: 0px outset blue;
+}
+	
+}
+
+/*	=============================
+	Tablet Stlyes: 481px and greater
+	=============================
+*/
+@media only screen and (min-width: 481px) {
+	
+	table.tutorial {
+	width: 75%;
+	border: 10px outset blue;
+	margin-top: 10px;
+	}
+}
+	
+/*	=============================
+	Desktop Stles: 769px and greater
+	=============================
+*/
+@media only screen and (min-width: 769px) {
+	table.tutorial {
+		width: 50%;
+	}
+	
+	
+}

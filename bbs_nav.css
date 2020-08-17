@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+/*
+   Author:   Sebastian Hollabaugh
+   Date:     8/1/18
+   
+   Filename: bbs_styles1.css
+   
+   This file contains the navigation styles used in the Billy Bill Splitter web site.
+
+*/
+
+/* ===========
+   Base Styles
+   ===========
+*/
+
+
+/* HTML and Body Styles */
+
+html {
+   background: url(bbs_background.jpg) center center / cover no-repeat fixed;
+   height: 100%;
+   font-family: Verdana, Geneva, sans-serif;
+   font-size: 12px;
+}
+
+body {
+   background: blue;   
+   box-shadow: rgb(51, 51, 51) 5px 0px 15px,
+               rgb(51, 51, 51) -5px 0px 15px;
+   margin: 0px auto;
+   min-width: 320px;
+   max-width: 1024px;
+   width: 100%;
+}
+   
+a.skip-main {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+a.skip-main:focus, a.skip-main:active {
+    color: black;
+    background-color:rgb(181, 204, 136);
+    left: auto;
+    top: auto;
+    width: 30%;
+    height: auto;
+    overflow:auto;
+    margin: 10px 35%;
+    padding:5px;
+    border-radius: 15px;
+    border:4px solid green;
+    text-align:center;
+    font-size:1.2em;
+    z-index:999;
+}
+
+/* Body Header Styles */
+
+body header {
+   background: blue;   
+}
+
+/* Horizonal Navigation Styles */
+
+nav.horizontal img {
+	display: block;
+	width: 20%;
+	float: left;
+}
+
+nav.horizontal {
+   position: relative;
+   background-color: blue;
+   min-height: 5em;
+}
+
+nav.horizontal li {
+   position: relative;
+   color: white;
+   display: block;
+   line-height: 2em;
+   font-family: Brush Script MT, Brush Script Std, cursive;
+	font-size: 20px;
+   text-transform: uppercase;
+   text-align: center;
+   vertical-align: middle;
+   margin-bottom: 0px;
+}
+
+nav.horizontal a {
+   position: relative;
+   display: block;
+   font-size: 1em;
+   vertical-align: bottom;
+   margin-bottom: 0px;
+   min-height: 100%;
+}
+
+nav.horizontal a.menu {
+	min-height: 4em;
+	padding: 5%;
+}
+
+nav.horizontal a:visited, nav.horizontal a:link {
+   color: white;
+}
+
+nav.horizontal a:hover, nav.horizontal a:active, nav.horizontal img:hover, nav.horizontal img:active  {
+   background-color: rgb(31, 73, 125);
+   color: white;
+}
+
+
+/* Main Menu Styles */
+
+ul.mainmenu {
+   display: block;
+}
+
+
+/* Submenu Styles */
+
+ul.submenu {
+   width: 100%;
+   background-color: rgb(181, 204, 136);
+}
+
+/* Footer Styles */
+
+body > footer {
+   background-color: blue;
+   font-size: 0.9em;
+   text-align: center;
+   padding: 10px 0px;
+   color: white;
+}
+
+
+/* Pulldown Menu Styles */
+ul.submenu {
+	display: none;
+}
+
+a.submenuTitle:hover+ul.submenu, ul.submenu:hover {
+	display: block;
+}
+
+
+/*	=============================
+	Mobile Stlyes: 0px to 480px
+	=============================
+*/
+@media only screen and (max-width: 480px) {
+	nav.horizontal a {
+		font-size: 1.5em;
+		line-height: 2.2em;
+	}
+	nav.horizontal img {
+		float: left;
+		width: 100%;
+		height: 100%;
+	}
+	
+	ul.submenu {
+		box-shadow: rgb(51, 51, 51) 5px 5px 15px;
+		position: absolute;
+		width: 100%;
+	}
+		
+	nav.horizontal a.menu {
+	min-height: 0em;
+	padding: 0%;
+	display: none;
+	}
+	
+	nav.horizontal a.submenuTitle{
+		display: block;
+		height: 50%;
+	}
+	
+}
+
+/*	=============================
+	Tablet Stlyes: 481px and greater
+	=============================
+*/
+@media only screen and (min-width: 481px) {
+	ul.mainmenu > li {
+		float: left;
+		width: 20%;
+		height: 100%;
+		vertical-align: bottom;
+	}
+	ul.menu {
+		box-shadow: rgb(51, 51, 51) 5px 5px 15px;
+		position: absolute;
+		width: 200%;
+	}
+		
+	nav.horizontal a.menu {
+	min-height: 2em;
+	padding: 0%;
+	}
+	
+	ul.submenu {
+		display: none;
+	}
+	
+	nav.horizontal a.submenuTitle {
+		display: none;
+	}
+	
+	
+}
+/*	=============================
+	Desktop Stles: 769px and greater
+	=============================
+*/
+@media only screen and (min-width: 769px) {
+	ul.menu {
+		background: transparent;
+		box-shadow: none;
+		display: block;
+		position: relative;
+		vertical-align: bottom;
+		width: 100%;
+		height: 100%;
+	}
+	nav.horizontal::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+			
+	nav.horizontal a.menu {
+	min-height: 4em;
+	padding: 5%;
+	}
+}
